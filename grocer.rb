@@ -1,5 +1,11 @@
 def consolidate_cart(cart)
-  # code here
+  array.uniq.each do |element|
+    count = array.count(element)
+    #this will count array elements even if hashes
+       element.each do |key, value|
+        value[:count] = count
+       end
+  end
 end
 
 def apply_coupons(cart, coupons)

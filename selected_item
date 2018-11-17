@@ -1,0 +1,33 @@
+
+[1mFrom:[0m /home/energetic-animator-2252/green_grocer-dumbo-web-102918/grocer.rb @ line 26 Object#apply_coupons:
+
+    [1;34m17[0m: [32mdef[0m [1;34mapply_coupons[0m(cart, coupons)
+    [1;34m18[0m: [1;34m#issue is conversion of hash into integer as the coupon hash is array[0m
+    [1;34m19[0m: [1;34m#find a way to save the selected_coupon into its own array with 1 item.[0m
+    [1;34m20[0m: [1;34m#then refer to it as selected_coupon[0][0m
+    [1;34m21[0m: old_count = [1;34m0[0m
+    [1;34m22[0m:  selected_coupon = coupons.select [32mdo[0m |element|
+    [1;34m23[0m:     selected_item = cart.select [32mdo[0m |cart_key, cart_value|
+    [1;34m24[0m:       cart_key == element[[33m:item[0m]
+    [1;34m25[0m:       old_count == cart_value[[33m:count[0m]
+ => [1;34m26[0m:       binding.pry
+    [1;34m27[0m:         [32mif[0m element[[33m:num[0m] <= cart_value[[33m:count[0m]
+    [1;34m28[0m:            cart_value[[33m:count[0m] = cart_value[[33m:count[0m] - element[[33m:num[0m]
+    [1;34m29[0m:         [32mend[0m
+    [1;34m30[0m:       [1;34m#end[0m
+    [1;34m31[0m:     [32mend[0m
+    [1;34m32[0m:   [32mend[0m
+    [1;34m33[0m: puts old_count
+    [1;34m34[0m:   food_key = selected_coupon[[1;34m0[0m][[33m:item[0m] + [31m[1;31m"[0m[31m W/COUPON[1;31m"[0m[31m[0m
+    [1;34m35[0m:   cart[food_key] = {}
+    [1;34m36[0m:   cart[food_key][[33m:price[0m] = selected_coupon[[1;34m0[0m][[33m:cost[0m]
+    [1;34m37[0m:   cart[food_key][[33m:count[0m] = [1;34m1[0m
+    [1;34m38[0m: 
+    [1;34m39[0m:  [32mif[0m old_count <= selected_coupon[[1;34m0[0m][[33m:num[0m]
+    [1;34m40[0m:    cart[food_key][[33m:clearance[0m] = [1;36mtrue[0m
+    [1;34m41[0m:  [32melse[0m
+    [1;34m42[0m:    cart[food_key][[33m:clearance[0m] = [1;36mfalse[0m
+    [1;34m43[0m:  [32mend[0m
+    [1;34m44[0m: cart
+    [1;34m45[0m: [32mend[0m
+
